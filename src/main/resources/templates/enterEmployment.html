@@ -1,0 +1,116 @@
+<!--===============================================-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Robo Resume - Enter Employment</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <!--<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/business-casual.css" rel="stylesheet">
+
+
+    <!-- Modifications in styles for this template -->
+    <!--<link href="css/additionals.css" rel="stylesheet">-->
+    <!--<link href="css/enterPerson.css" rel="stylesheet">-->
+
+</head>
+
+<body>
+    <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">Enter Employment</div>
+
+    <!--<h1 id="homeHeading">Enter Employment</h1>-->
+    <hr>
+
+    <div class="container">
+
+        <div class="bg-faded p-4 my-4">
+            <hr class="divider">
+            <h2 class="text-center text-lg text-uppercase my-0"><strong>Work Experiences Form</strong></h2>
+            <hr class="divider">
+
+            <form action="#"
+                  th:action="@{/enterEmployment}"
+                  th:object="${newEmployment}"
+                  method="post">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="form-group">
+                    <label class="col-md-5 control-label">Position Title:</label>
+                    <div class="col-sm-13">
+                        <input type="text" th:field="*{positionTitle}" />
+                        <p><span th:if="${#fields.hasErrors('positionTitle')}" th:errors="*{positionTitle}" style="color:#b81624"/></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-5 control-label">Organisation:</label>
+                    <div class="col-sm-13">
+                        <input type="text" th:field="*{organisation}" />
+                        <p><span th:if="${#fields.hasErrors('organisation')}" th:errors="*{organisation}" style="color:#b81624"/>  </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-5 control-label">Start date "yyyy/MM/dd":</label>
+                    <div class="col-sm-13">
+                        <input type="text" th:field="*{startDate}" />
+                        <p><span th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}" style="color:#b81624"/> </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-5 control-label">End date "yyyy/MM/dd":</label>
+                    <div class="col-sm-13">
+                        <input type="text" th:field="*{endDate}" />
+                        <p><span th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" style="color:#b81624"/> </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-5 control-label">Enter duty:</label>
+                    <div class="col-sm-13">
+                        <input type="text" th:field="*{duty}" />
+                        <p><span th:if="${#fields.hasErrors('duty')}" th:errors="*{duty}" style="color:#b81624"/> </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!--<a class="btn btn-secondary"> <input  type = "submit" value="Submit Employment Info"/>Submit Info</a>-->
+                    <!--<a class="btn btn-secondary" href="/resultEmployment"> <input  type = "submit" />Submit Employment Info</a>-->
+
+                    <!--<a class="btn btn-secondary"  href="/resultEducation" type = "submit">Submit Employment Info</a>-->
+
+                    <!--<input type="button"  onclick="enterEducation.href='/resultEducation.htm'" value="Submit" >-->
+
+                    <input class="btn btn-secondary" type = "submit" value="Submit Employment Info"/></a>
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+    <!-- /.container -->
+
+
+
+
+    <!-- Footer -->
+    <div th:replace="base :: footer"></div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

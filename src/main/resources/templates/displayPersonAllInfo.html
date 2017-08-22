@@ -1,0 +1,210 @@
+<!--================================================================-->
+<!--================================================================-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Robo Resume - Display All Info</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <!--<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/business-casual.css" rel="stylesheet">
+
+
+    <!--===== Custom Stylesheet ====-->
+    <!--<link href="additionals.css" rel="stylesheet">-->
+
+
+</head>
+
+<body>
+
+    <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">Robo Resume:</div>
+    <!--<h1>Here is Your Resume:</h1>-->
+
+    <br/><br/>
+
+
+
+    <div class="container">
+
+        <!-- Personal Info -->
+        <div class="bg-faded p-4 my-4">
+            <hr class="divider">
+            <h2 class="text-center text-lg text-uppercase my-0"><strong>Personal Information</strong></h2>
+            <hr class="divider">
+            <div class="form-group">
+                <h5 th:inline="text"> Full Name: [[${person.firstName}]] [[${person.lastName}]].</h5>
+                <h5 th:inline="text"> Email Address: [[${person.emailAddress}]].</h5>
+                <div>
+                    <a th:href="@{/updatePerson/{id}(id=${person.id})}">Update</a>
+                    <br/>
+                </div>
+                <br/>
+            </div>
+        </div>
+        <!-- /Personal Info -->
+
+
+        <!-- Education Info -->
+        <div class="bg-faded p-4 my-4">
+            <hr class="divider">
+            <h2 class="text-center text-lg text-uppercase my-0"><strong>Educational Achievements</strong></h2>
+            <hr class="divider">
+
+            <div class="form-group">
+                <!--<h3>Education:</h3>-->
+                <div th:each="e:${person.educationalAchievements}">
+                    <h3>Education:</h3>
+                    <h5 th:text="${e.degreeTitle}"></h5>
+                    <h5 th:text="${e.educationalInstitution}"></h5>
+                    <h5 th:text="${e.graduateDate}"></h5>
+                    <div>
+                        <a th:href="@{/updateEducation/{id}(id=${e.id})}">Update</a>
+                        <a th:href="@{/deleteEducation/{id}(id=${e.id})}">Delete</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <!-- /Education Info -->
+
+
+        <!-- Employment Info -->
+        <div class="bg-faded p-4 my-4">
+            <hr class="divider">
+            <h2 class="text-center text-lg text-uppercase my-0"><strong>Work Experience</strong></h2>
+            <hr class="divider">
+            <div class="form-group">
+                <div th:each="w:${person.workExperience}">
+                    <h3>Employment:</h3>
+                    <h5 th:text="${w.positionTitle}"></h5>
+                    <h5 th:text="${w.organisation}"></h5>
+                    <h5 th:text="${w.startDate}"></h5>
+                    <h5 th:text="${w.endDate}"></h5>
+                    <h5 th:text="${w.duty}"></h5>
+                    <div>
+                        <a th:href="@{/updateEmployment/{id}(id=${w.id})}">Update</a>
+                        <a th:href="@{/deleteEmployment/{id}(id=${w.id})}">Delete</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <!-- /Employment Info -->
+
+
+        <!-- Skills Info -->
+        <!--<div class="bg-faded p-4 my-4">-->
+            <!--<hr class="divider">-->
+            <!--<h2 class="text-center text-lg text-uppercase my-0"><strong>Skills with Rating</strong></h2>-->
+            <!--<hr class="divider">-->
+            <!--<div class="form-group">-->
+                <!--<div th:each="s:${person.skillsWithRating}">-->
+                    <!--<h3>Skills:</h3>-->
+                    <!--<h5 th:text="${s.skillTitle}"></h5>-->
+                    <!--<h5 th:text="${s.skillRating}"></h5>-->
+                    <!--<div>-->
+                        <!--<a th:href="@{/updateSkills/{id}(id=${s.id})}">Update</a>-->
+                        <!--<a th:href="@{/deleteSkills/{id}(id=${s.id})}">Delete</a>-->
+                    <!--</div>-->
+                    <!--<br>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!-- /Skills Info -->
+
+
+
+        <!--<details>-->
+            <!--<summary>See More</summary>-->
+            <!--This text will be hidden if your browser supports it.-->
+        <!--</details>-->
+
+
+
+        <!-- Skills Info -->
+        <div class="bg-faded p-4 my-4">
+            <details>
+                <summary>
+                    <hr class="divider">
+                    <h2 class="text-center text-lg text-uppercase my-0"><strong>Skills with Rating</strong></h2>
+                    <hr class="divider">
+                </summary>
+                <div class="form-group">
+                    <div th:each="s:${person.skillsWithRating}">
+                        <h3>Skills:</h3>
+                        <h5 th:text="${s.skillTitle}"></h5>
+                        <h5 th:text="${s.skillRating}"></h5>
+                        <div>
+                            <a th:href="@{/updateSkills/{id}(id=${s.id})}">Update</a>
+                            <a th:href="@{/deleteSkills/{id}(id=${s.id})}">Delete</a>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <p th:text="${myMessage}"> There is nothing to display  </p>
+            </details>
+        </div>
+        <!-- /Skills Info -->
+
+
+        <!-- Enter more Info -->
+        <div class="bg-faded p-4 my-4" style="text-align: center">
+            <div style="width: 30%; margin: 0 auto;">
+                <!--<div class="form-group">-->
+                    <a class="btn btn-secondary" href="/enterEducation" type = "submit" style="width:310px">Add Educational Achievement</a>
+                    <!--<a class="btn btn-secondary" href="/enterEducation" type = "submit">Add Another Education</a><br/>-->
+                <p></p>
+
+                    <a class="btn btn-secondary" href="/enterEmployment" type = "submit" style="width:310px">Add More Work Experiences </a>
+                    <!--<a class="btn btn-secondary" href="/enterEmployment" type = "submit">Add Work Experience</a><br/>-->
+                <p></p>
+                    <!--<a class="btn btn-secondary" href="/enterSkills" type = "submit" style="width:310px">Add More Skills With Rating</a>-->
+                    <!--<a class="btn btn-secondary" href="/enterSkills" type = "submit">Add Skills With Rating</a><br/>-->
+
+
+                <div th:switch="${disableSkillButton}">
+                    <!--<button type="submit" name="second" th:case="'true'" disabled>Second</button>-->
+                    <a class="btn btn-secondary" href="/enterSkills" type = "submit" style="width:310px" th:case="'true'" disabled>Add More Skills With Rating</a>
+                    <a class="btn btn-secondary" href="/enterSkills" type = "submit" style="width:310px" th:case="false">Add More Skills With Rating</a>
+
+                    <!--<a class="btn btn-secondary" href="/enterSkills" type = "submit" style="width:310px" th:case="'true'" role="button" aria-disabled="true">Primary link</a>-->
+                    <!--<a class="btn btn-secondary" href="/enterSkills" type = "submit" style="width:310px" th:case="'false'" aria-disabled="false">Link</a>-->
+                    <!--<button type="submit" name="second" th:case="*">Second</button>-->
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- /Enter more Info -->
+
+    </div>
+    <!-- /.container -->
+
+
+
+    <!-- Footer -->
+    <div th:replace="base :: footer"></div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

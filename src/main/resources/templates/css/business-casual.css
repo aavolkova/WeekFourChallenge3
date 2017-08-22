@@ -1,0 +1,191 @@
+/*!
+ * Start Bootstrap - Business Casual (http://startbootstrap.com/template-overviews/business-casual)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
+ */
+
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    background: url('../img/Picture1.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-heading {
+    font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.tagline-upper {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+
+
+   /*additionals:*/
+
+    text:center;
+    text:heading;
+    text: shadow;
+    text-color: white;
+    /*mt-5 d-none d-lg-block*/
+
+
+}
+
+.tagline-lower {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.text-expanded {
+    letter-spacing: 2px;
+}
+
+
+.StartResume{
+    color: #244ea4;
+    font-size: 2rem;
+    font-color: rgba(196, 243, 255, 0.93);
+
+}
+a:hover {
+    COLOR: #82ddff;
+    TEXT-DECORATION: none;
+
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-lg {
+    font-size: 1.25rem;
+}
+
+.bg-faded {
+    background-color: rgba(218, 250, 255, 0.9);
+    /*background-color: rgba(255, 255, 255, 0.9);*/
+    /*background-color: rgba(217, 214, 255, 0.9);*/
+    /*background-color: rgba(196, 243, 255, 0.9);*/
+
+}
+
+/*transparent div class*/
+.bg-faded1 {
+    background-color: rgba(218, 250, 255, 0);
+}
+
+.bg-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+hr.divider {
+    border-color: #292b2c;
+    max-width: 250px;
+}
+
+.map-container iframe {
+    pointer-events: none;
+}
+
+.map-container iframe.clicked {
+    pointer-events: auto;
+}
+
+
+/*My Additionals*/
+.container {
+    /*background: black;*/
+    /*color:white;*/
+    padding-bottom:60px;   /* Height of the footer */
+}
+
+.container1 {
+    /*background: black;*/
+    /*color:white;*/
+    color: rgba(249, 253, 255, 0);
+    /*padding-bottom:60px;   !* Height of the footer *!*/
+}
+
+footer {
+    /*color:white;*/
+
+    /*position:absolute;*/
+    position:fixed;
+    /*position:relative;*/
+
+    bottom:0;
+    width:100%;
+    height:35px;   /* Height of the footer */
+    /*background:#6cf;*/
+    text-align: center;
+
+
+    /*position: absolute;*/
+    left: 0;
+    right: 0;
+    /*background-color: #00A;*/
+    /*z-index: 150;*/
+
+    /*top: 1000px;*/
+
+}
+
+/*doesn't work:*/
+span {
+    font-color: #b81624
+}
+
+
+/*doesn't work:*/
+.h2{
+    font-weight: bold;
+}
+
+
+
+.col-md-5 {
+    font-family: "Josefin Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+
+
+summary:after {
+    /*background: red;*/
+    border-radius: 5px;
+    /*content: "+";*/
+    /*color: #fff;*/
+    float: left;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: -5px 10px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 20px;
+    border: transparent;
+
+
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s;
+    background: url(http://placekitten.com/g/600/300);
+    color: #FFF;
+}
+
+details[open] summary:after {
+    border:transparent;
+}
